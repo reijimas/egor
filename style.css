@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+    margin : 0;
+}
+
+.footer {
+    padding: 10px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.social a {
+    color: #000;
+    display: inline-flex;
+}
