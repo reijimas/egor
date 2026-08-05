@@ -1,0 +1,81 @@
+/* Carousel: 機能上必要な最小限のスタイル。
+   色・矢印の見た目・ラベルの装飾などは自由に上書きしてください。 */
+
+.archive-nav {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;   /* 縦並び（1つずつ改行） */
+    justify-content: center;
+    gap: 16px;
+}
+ 
+.archive-nav-link {
+    text-decoration: underline;
+}
+ 
+/* カルーセル全体の最大幅。画像・ラベル・矢印すべてこの幅に揃います。 */
+.carousel {
+    position: relative;
+    max-width: 600px;      /* ← 画像の最大幅。ここを変えるとサイズが変わります */
+    margin: 0 auto;        /* 中央寄せ */
+}
+
+/* 表示用ラベル（写真の上の余白。画像とは重なりません） */
+.carousel-label {
+    display: block;
+    /* 文字サイズ・色・余白などの装飾は自由に追加してください */
+}
+
+/* 矢印を画像に重ねるための土台（この中に矢印とトラックが入る） */
+.carousel-viewport {
+    position: relative;
+}
+
+/* 横スクロール + スナップ */
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    /* スクロールバー非表示 */
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE / 旧Edge */
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;                /* Chrome / Safari / 新Edge */
+}
+
+.carousel-item {
+    flex: 0 0 100%;               /* 1画面に1枚 */
+    scroll-snap-align: start;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;            /* 画面の高さを超えない */
+    object-fit: contain;
+    display: block;
+}
+
+/* 矢印ボタン: 画像の左右端に配置 */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-label{
+    padding: 20px;
+    font-size: 24px;
+}
