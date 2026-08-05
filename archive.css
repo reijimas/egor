@@ -18,6 +18,8 @@
     position: relative;
     max-width: 600px;      /* ← 画像の最大幅。ここを変えるとサイズが変わります */
     margin: 0 auto;        /* 中央寄せ */
+    margin-bottom: 60px;   /* 下の余白 */
+    margin-top: 20px;      /* 上の余白 */
 }
 
 /* 表示用ラベル（写真の上の余白。画像とは重なりません） */
@@ -65,6 +67,25 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+
+   /* 背景・枠線を消す */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+ 
+    /* 灰色の矢印記号 */
+    color: gray;
+    font-size: 48px;
+    line-height: 1;
+}
+
+.carousel-prev::before {
+    content: "\2039";   /* ‹ */
+}
+ 
+.carousel-next::before {
+    content: "\203A";   /* › */
 }
 
 .carousel-prev {
